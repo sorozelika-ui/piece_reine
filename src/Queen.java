@@ -1,26 +1,20 @@
-public class Queen {
+import javax.swing.text.Position;
+
+class Queen extends Piece {
+
+    boolean isValidMove(Position newPosition) {
+
+        Bishop bishop = new Bishop();
+        Rock rock = new Rock();
 
 
-    class Rock extends Piece{
-        boolean isValidMove(Position newPosition){
-            if(newPosition.column == this.column || newPosition.row == this.row){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
+        bishop.row = this.row;
+        bishop.column = this.column;
+
+        rock.row = this.row;
+        rock.column = this.column;
+
+        return bishop.isValidMove(newPosition) ||
+                rock.isValidMove(newPosition);
     }
-
-    class Bishop extends Piece{
-        boolean isValidMove(Position newPosition){
-            if(Math.abs(newPosition.column - this.column) == Math.abs(newPosition.row - this.row)){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    }
-
 }
