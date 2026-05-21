@@ -1,12 +1,9 @@
-import javax.swing.text.Position;
-
 class Queen extends Piece {
 
     boolean isValidMove(Position newPosition) {
 
         Bishop bishop = new Bishop();
         Rock rock = new Rock();
-
 
         bishop.row = this.row;
         bishop.column = this.column;

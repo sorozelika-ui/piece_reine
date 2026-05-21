@@ -1,6 +1,4 @@
-import javax.swing.text.Position;
-
-public class Rock {
+class Rock extends Piece{
     boolean isValidMove(Position newPosition){
         if(newPosition.column == this.column || newPosition.row == this.row){
             return true;
